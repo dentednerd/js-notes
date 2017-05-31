@@ -93,6 +93,7 @@ describe('myFunction', function () {
 ```
 "scripts": {
   "test": "mocha ./spec/*.spec.js",
+  "precommit": "npm test",
   "lint": "eslint --fix ./"
 }
 ```
@@ -101,9 +102,10 @@ describe('myFunction', function () {
 12. Add posttest and lint scripts to **package.json**:
 ```
 "scripts": {
-  "test": "mocha ./spec/*.spec.js",
-  "test.watch": "npm test -- --watch",
-  "posttest": "npm run lint",
-  "lint": "eslint --fix ./"
+    "test": "mocha ./spec/*.spec.js",
+    "test.watch": "npm test -- --watch",
+    "posttest": "npm run lint",
+    "precommit": "npm test",
+    "lint": "eslint --fix ./"
 }
 ```
